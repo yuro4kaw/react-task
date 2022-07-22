@@ -32,7 +32,28 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 140px;
+
+  position: absolute;
+  width: 1170px;
+  height: 2382px;
+  left: 695px;
+  top: 60px;
 }
