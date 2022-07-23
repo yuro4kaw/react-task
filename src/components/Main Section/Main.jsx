@@ -13,7 +13,7 @@ function Main(props) {
         if (!!props.values) {
             handleAmount1Change(1);
         }
-    })
+    }, [props.values])
 
     function format(num) {
         return num.toFixed(4)
