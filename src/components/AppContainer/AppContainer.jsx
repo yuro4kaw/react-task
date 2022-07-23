@@ -1,42 +1,31 @@
 import React from "react";
 import { getCourseValues } from "../../Redux/HeaderReducer";
-import Header from "./Header";
+import Header from "./../Header/Header";
+import Main from "../Main Section/Main";
 import { compose } from "redux";
 import { connect } from "react-redux";
 
-class HaderContainer extends React.Component {
+class AppContainer extends React.Component {
 
     componentDidMount() {
         this.props.getCourseValues()
     }
 
-    onPageChanged = () => {
-        this.props.getCourseValues()
-    }
-
     render() {
-        return <>
-            < Header
-                values={this.props.values}
-
-            />
-        </>
-
+        return <div>
+            < Header values={this.props.values} />
+            <Main values={this.props.values} />
+        </div>
     }
 }
 
 
 let mapStateToProps = (state) => {
-
     return {
         values: state.header.values,
-
     }
 }
 
 export default compose(
-    connect(mapStateToProps,
-        {
-            getCourseValues
-        })
-)(HaderContainer)
+    connect(mapStateToProps, { getCourseValues })
+)(AppContainer)

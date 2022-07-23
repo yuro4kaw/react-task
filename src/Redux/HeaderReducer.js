@@ -3,7 +3,7 @@ import { GetValuesAPI } from "../Api/api"
 const SET_COURSE_VALUES = "SET_COURSE_VALUES"
 
 let initialState = {
-    values:[]
+    values:{}
 };
 
 const HeaderReducer = (state = initialState, action) => {
@@ -23,12 +23,8 @@ const HeaderReducer = (state = initialState, action) => {
 export const setCourseValues = ( response) => ({ type: SET_COURSE_VALUES, response } )
 
 export const getCourseValues = () => async (dispatch) => {
-    
     let response = await GetValuesAPI.GetValues();
-    
-            
-            dispatch(setCourseValues(response));
-    
+    dispatch(setCourseValues(response));
 }
 
 export default HeaderReducer;
